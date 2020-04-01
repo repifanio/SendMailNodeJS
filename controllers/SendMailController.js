@@ -5,7 +5,7 @@ class SendMailController{
         await mail.sendMail({
             to: 'Teste <teste@email.com>',
             subject: 'Teste de email',
-            template: 'cancelations',
+            template: 'information',
             context: {
                 varExemplo: 'Nome de Exemplo'
             }
