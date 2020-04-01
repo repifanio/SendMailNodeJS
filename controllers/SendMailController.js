@@ -1,13 +1,16 @@
 const mail = require('../lib/mail');
 
 class SendMailController{
-    send(req, res){
-        mail.sendMail({
+    async send(req, res){
+        await mail.sendMail({
             to: 'Teste <teste@email.com>',
             subject: 'Teste de email',
-            text: 'Esse email foi enviado em texto simples'
-        })
+            template: 'cancelations',
+            context: {
+                varExemplo: 'Nome de Exemplo'
+            }
 
+        })
         return res.send('Email enviado')
     }
 }
